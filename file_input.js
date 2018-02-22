@@ -73,15 +73,15 @@ $(function() {
         },
         inputMapper: {
             inputStream: {
-                size: function(value){
-                    return parseInt(value);
+                size: function(){
+                    return parseInt(800);
                 }
             },
-            numOfWorkers: function(value) {
-                return parseInt(value);
+            numOfWorkers: function() {
+                return parseInt(1);
             },
             decoder: {
-                readers: function(value) {
+                 readers: function(value) {
                     if (value === 'ean_extended') {
                         return [{
                             format: "ean_reader",
@@ -105,12 +105,12 @@ $(function() {
                 singleChannel: false
             },
             locator: {
-                patchSize: "medium",
+                patchSize: "x-large",
                 halfSample: true
             },
             decoder: {
                 readers: [{
-                    format: "code_128_reader",
+                    format: "upc_reader",
                     config: {}
                 }]
             },
